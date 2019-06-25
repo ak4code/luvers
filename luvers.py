@@ -1,8 +1,7 @@
-from PIL import Image, ImageDraw
-import sys
+from PIL import Image, ImageDraw, TiffImagePlugin
 
+Image.DEBUG=True
 ONE_INCH_IN_MM = 25.4
-
 img = Image.open('print3.tif')
 
 DPI = img.info['dpi'][0]
@@ -81,5 +80,6 @@ drawCircleWidth(x + step_w, height - (offset_px + luvers_diametr_px), step_w, lu
 drawCircleHeight(x, y + step_h, step_h, luvers_diametr_px, luvers_qnt_h)
 drawCircleHeight(width - (offset_px + luvers_diametr_px), y, step_h, luvers_diametr_px, luvers_qnt_h)
 
-img.save('print2.tif')
-# img.show()
+
+
+img.copy().save('test_lzw.tif', compression='tiff_lzw')
