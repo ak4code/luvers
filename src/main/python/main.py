@@ -1,12 +1,13 @@
+from fbs_runtime.application_context.PyQt5 import ApplicationContext
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QFileDialog
 from PIL import Image, ImageDraw
 
-import luvers_app
+import luvers
 
 
-class LuversApp(QtWidgets.QMainWindow, luvers_app.Ui_MainWindow):
+class LuversApp(QtWidgets.QMainWindow, luvers.Ui_MainWindow):
     im = None
     step = 100
     offset = 20
@@ -179,10 +180,10 @@ class LuversApp(QtWidgets.QMainWindow, luvers_app.Ui_MainWindow):
 
 
 def main():
-    app = QtWidgets.QApplication(sys.argv)
+    appctxt = ApplicationContext()
     window = LuversApp()
     window.show()
-    exit_code = app.exec_()
+    exit_code = appctxt.app.exec_()
     sys.exit(exit_code)
 
 
