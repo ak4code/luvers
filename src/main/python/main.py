@@ -9,7 +9,7 @@ import luvers
 
 class LuversApp(QtWidgets.QMainWindow, luvers.Ui_MainWindow):
     im = None
-    step = 100
+    step = 300
     offset = 20
     luvers_size = 10
     top_side = True

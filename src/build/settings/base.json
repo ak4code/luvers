@@ -2,5 +2,6 @@
     "app_name": "luvers",
     "author": "Akweb",
     "main_module": "src/main/python/main.py",
-    "version": "0.0.0"
+    "version": "0.1.0",
+    "hidden_imports": ["PyQt5.sip"]
 }
